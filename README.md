@@ -9,8 +9,11 @@ Introdução ao .NET: [Documentação C#](https://docs.microsoft.com/pt-br/dotne
 Explicação Herança e Composiçao [Macoratti.net](http://www.macoratti.net/11/05/oop_cph1.htm)
 
 UC9 SA2 Codificação Back-End
+
 Desafio	Data do Encontro	Status
+
 Encontro Remoto 2	01/10	✔️
+
 Encontro Remoto 3	08/10	✔️
 
 
