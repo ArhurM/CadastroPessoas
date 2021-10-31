@@ -2,24 +2,35 @@ namespace CadastroPessoa
 {
     public class PessoaJuridica : Pessoa
     {
-        public PessoaJuridica(int id_PJ, string cnpj, string razaoSocial)
-        {
-            this.id_PJ = id_PJ;
-            this.cnpj = cnpj;
-            this.razaoSocial = razaoSocial;
-
-        }
-        public int id_PJ { get; set; }
-
         public string cnpj { get; set; }
 
-        private string razaoSocial { get; set; }
+        public string razaoSocial { get; set; }
 
-        public override void pagarImposto(float salario){
+        public override double pagarImposto(float rendimento)
+        {
 
+             if (rendimento <= 5000)
+            {
+                return rendimento * .06;
 
+            }else if (rendimento >5000 && rendimento <=10000)
+            {
+                return rendimento * .08;
+
+            }else
+            {
+                return(rendimento/100) *10;
+            }
         }
+        public bool validarCNPJ(string cnpj){
 
+            if(cnpj.Length == 14 && cnpj.Substring(cnpj.Length - 6, 4) == "0001")
+             {
+                 return true;
+             }
+            return  false;   
+
+       }
 
     }
 }

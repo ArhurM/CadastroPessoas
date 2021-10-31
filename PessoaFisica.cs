@@ -4,13 +4,25 @@ namespace CadastroPessoa
 {
     public class PessoaFisica : Pessoa
     {
-        public int id_PF { get; set; }
         
         public string cpf { get; set; }
 
         public DateTime datadeNasc { get; set; }
 
-        public override void pagarImposto(float salario){
+        public override double pagarImposto(float rendimento){
+            if (rendimento <= 1500)
+            {
+                return 0;
+
+            }else if (rendimento >1500 && rendimento <=5000)
+            {
+                return rendimento * .03;
+
+            }else
+            {
+                return(rendimento/100) *5;
+            }
+            
 
         }  
 
@@ -24,12 +36,10 @@ namespace CadastroPessoa
 
             return true;
         }
-         else {
-            
-            return false;
+                     
+        return false;
 
         }
         
       }
     }
-}
